@@ -1,1 +1,10 @@
+sudo: required
+
 language: java
+
+services:
+  - docker
+
+  after_succes:
+    - docker build -t sem2 .
+    - docker run sem2
